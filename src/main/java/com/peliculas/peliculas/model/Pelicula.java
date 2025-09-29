@@ -1,10 +1,12 @@
 package com.peliculas.peliculas.model;
 
+import org.springframework.hateoas.RepresentationModel;
+
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "PELICULA")
-public class Pelicula {
+public class Pelicula extends RepresentationModel<Pelicula> {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pelicula_seq")
     @SequenceGenerator(name = "pelicula_seq", sequenceName = "SEQ_PELICULA", allocationSize = 1)
